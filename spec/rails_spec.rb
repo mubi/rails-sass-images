@@ -7,31 +7,31 @@ describe CssController, type: :controller do
   end
 
   it "inlines assets" do
-    get :test, file: 'inline'
+    get :test, params: { file: 'inline' }
     expect(response).to be_success
     expect(response.body).to eq ".icon{background:#{INLINE}}\n"
   end
 
   it "raises error on unknown file" do
     expect {
-      get :test, file: 'wrong-inline'
+      get :test, params: { file: 'wrong-inline' }
     }.to raise_error(/Can't find asset no\.png/)
   end
 
   it "gets image size" do
-    get :test, file: 'size'
+    get :test, params: { file: 'size' }
     expect(response).to be_success
     expect(response.body).to eq ".icon{width:4px;height:6px}\n"
   end
 
   it "gets image size by mixin" do
-    get :test, file: 'image-size'
+    get :test, params: { file: 'image-size' }
     expect(response).to be_success
     expect(response.body).to eq ".icon{width:4px;height:6px}\n"
   end
 
   it "has hidpi-background mixin" do
-    get :test, file: 'hidpi-background'
+    get :test, params: { file: 'hidpi-background' }
     expect(response).to be_success
     expect(response.body).to include ".icon{" +
       "background-image:url(/assets/monolith"
@@ -39,7 +39,7 @@ describe CssController, type: :controller do
   end
 
   it "has hidpi-image mixin" do
-    get :test, file: 'hidpi-image'
+    get :test, params: { file: 'hidpi-image' }
     expect(response).to be_success
     expect(response.body).to include ".icon{" +
       "width:2px;height:3px;" +
@@ -49,7 +49,7 @@ describe CssController, type: :controller do
   end
 
   it "has hidpi-inline mixin" do
-    get :test, file: 'hidpi-inline'
+    get :test, params: { file: 'hidpi-inline' }
     expect(response).to be_success
     expect(response.body).to eq ".icon{" +
       "width:2px;height:3px;" +
