@@ -1,4 +1,6 @@
-# Rails Sass Images [![Build Status](https://travis-ci.org/ai/rails-sass-images.svg)](https://travis-ci.org/ai/rails-sass-images)
+# Rails Sass Images - SassC fork
+
+**Fork to work with [sassc-rails](https://github.com/sass/sassc-rails)**
 
 Sass functions and mixins to inline images and get images size:
 

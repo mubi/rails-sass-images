@@ -5,4 +5,4 @@ gem 'rake'
 gem 'rspec-rails'
 
 gem 'rails',      '>= 4'
-gem 'sass-rails', '>= 4'
+gem 'sassc-rails', '>= 1'
