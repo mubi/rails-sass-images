@@ -43,7 +43,7 @@ private
   # Safe detect is `var` is a Sprockets environment
   def self.sprockets?(var)
     return false unless defined? Sprockets
-    var.is_a? Sprockets::Environment or var.is_a? Sprockets::Index
+    var.is_a? Sprockets::Environment or var.is_a? Sprockets::CachedEnvironment
   end
 end
 
